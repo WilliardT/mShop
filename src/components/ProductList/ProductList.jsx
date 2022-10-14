@@ -38,7 +38,7 @@ const ProductList = () => {
          },
          body: JSON.stringify(data)
       })
-   }, []);
+   }, [addedItems, queryId]);
 
    useEffect(() => {
       tg.onEvent('mainButtonClicked', onSendData)
@@ -54,7 +54,7 @@ const ProductList = () => {
       if (alreadyAdded) {
          newItems = addedItems.filter(item => item.id !== product.id)
       } else {
-         newItems[...addedItems, product]
+         newItems[addedItems, product]
       }
 
       setAddedItems(newItems)
