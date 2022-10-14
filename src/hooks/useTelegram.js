@@ -9,7 +9,7 @@ export function useTelegram() {
    }
 
    const onToggleButton = () => {
-      if (tg.MainButton.isVisiable) {
+      if (tg.MainButton.isVisible) {
          tg.MainButton.hide();
       } else {
          tg.MainButton.show();
@@ -21,5 +21,6 @@ export function useTelegram() {
       onToggleButton,
       tg,
       user: tg.initDataUnsafe?.user,
+      queryId: tg.initDataUnsafe?.query_id,
    }
 }
